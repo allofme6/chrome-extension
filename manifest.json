@@ -8,8 +8,34 @@
         "48": "icon48.png",
         "16": "icon16.png"
     },
-    "browser_action": {
+    "permissions": [
+        "activeTab",
+        "declarativeContent",
+        "cookies",
+        "storage",
+        "webNavigation",
+        "tabs",
+        "contextMenus",
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+    },
+    "options_page": "options.html",
+    "page_action": {
         "default_icon": "icon16.png",
         "default_popup": "popup.html"
-    }
+    },
+    "commands": {
+        "_execute_browser_action": {
+          "suggested_key": {
+            "default": "Ctrl+Shift+F",
+            "mac": "MacCtrl+Shift+F"
+          },
+          "description": "Opens hello.html"
+        }
+      }
 }

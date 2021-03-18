@@ -4,8 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            width: 150px;
+        }
+        #add-new-item {
+            cursor: pointer;
+            color: #CCC;
+        }
+        .hide {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+        .item {
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        .item input {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+        }
+        input {
+            width: 120px;
+        }
+    </style>
 </head>
 <body>
-    <div>hello 浦文卓</div>
+    <div>
+        hello 浦文卓
+    </div>
+    <button id="changeColor"></button>
+    <img src="https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2853553659,1775735885&amp;fm=26&amp;gp=0.jpg" class="op-img-address-img" style="width: 255.375px; height: 180px; cursor: pointer; margin-left: -24.75px; display: inline-block;">
+    <div id="add-new-item">添加新项</div>
+    <div id="add-new-item-input" class="hide">
+        <input type="text" id="new-item-title" placeholder="添加新任务"/>
+    </div>
+    <div id="item-list"></div>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
