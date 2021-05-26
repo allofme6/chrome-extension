@@ -1,6 +1,6 @@
 (function () {
     let changeColor = document.getElementById('changeColor');
-    
+
     chrome.storage.sync.get('color', function(data) {
         changeColor.style.backgroundColor = data.color;
         changeColor.setAttribute('value', data.color);
@@ -31,6 +31,18 @@
         $itemList: $('item-list'),
         $newItemTitle: $('new-item-title'),
         init: function () {
+            $('printTabId').addEventListener('click', function() {
+                function getCurrentTabId(callback)
+{
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs)
+	{
+		if(callback) callback(tabs.length ? tabs[0].id: null);
+	});
+}
+                getCurrentTabId(tabId => {
+                    alert('当前标签ID：' + tabId);
+                });
+            })
             //打开添加文本框
             Tasks.$addNewItem.addEventListener('click', function () {
                 Tasks.show(Tasks.$addNewItemInput).hide(Tasks.$addNewItem);
